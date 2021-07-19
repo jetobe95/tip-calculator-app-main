@@ -1,12 +1,12 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import ButtonSelectable from "./components/ButtonSelectable/ButtonSelectable";
-import GroupSelectabledButton from "./components/ButtonSelectable/GroupSelectabledButton";
-import Labelnput from "./components/Label/Label";
-import LabelTextInput from "./components/LabelTextInput/LabelTextInput";
-import TipResult from "./components/TipResult/TipResult";
-import { Wrapper,SizedBox } from "./styledComponents";
+import ButtonSelectable from "../components/ButtonSelectable/ButtonSelectable";
+import GroupSelectabledButton from "../components/ButtonSelectable/GroupSelectabledButton";
+import Labelnput from "../components/Label/Label";
+import LabelTextInput from "../components/LabelTextInput/LabelTextInput";
+import TipResult from "../components/TipResult/TipResult";
+import { Wrapper,SizedBox,Nav } from "../components/styledComponents";
 
 export default function Home() {
   return (
@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
 
       <header>
-        <nav> <Image src='/logo.svg' height={53} width={86} alt='Logo'/> </nav>
+        <Nav> <Image src='/logo.svg' height={53} width={86} alt='Logo'/> </Nav>
       </header>
 
       <Wrapper>

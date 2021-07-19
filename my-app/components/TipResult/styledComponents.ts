@@ -29,4 +29,8 @@ export const Button = styled.button`
       background-color: #9FE8DF;
       cursor: pointer;
   }
+  &:disabled{
+    background-color: #0D686D;
+    opacity: .35;;
+  }
 `;

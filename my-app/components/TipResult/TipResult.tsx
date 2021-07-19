@@ -8,7 +8,7 @@ export default function TipResult() {
         <ItemResume money={'4.27'}/>
         <ItemResume money={'32.79'}/>
       </ItemResumeContainer>
-      <Button>RESET</Button>
+      <Button disabled>RESET</Button>
     </Wrapper>
   );
 }
