@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { LabelText } from "./lib/styledComponent";
+import { LabelText } from "./styledComponent";
 
 interface LabelProps {
   title: string;
