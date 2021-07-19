@@ -1,14 +1,24 @@
-import { Wrapper,Number, Title, Subtitle,ContainerLeading } from "./styledComponents";
-export default function ItemResume() {
+import { FC } from "react";
+import {
+  Wrapper,
+  Number,
+  Title,
+  Subtitle,
+  ContainerLeading,
+} from "./styledComponents";
+interface ItemResumeProps {
+  money?:string
+}
+const ItemResume: FC<ItemResumeProps> = ({money}) => {
   return (
     <Wrapper>
-      <div>
-        <ContainerLeading>
-          <Title>Tip amount</Title>
-          <Subtitle>Total</Subtitle>
-        </ContainerLeading>
-        <Number>$4.27</Number>
-      </div>
+      <ContainerLeading>
+        <Title>Tip amount</Title>
+        <Subtitle>/ person</Subtitle>
+      </ContainerLeading>
+      <Number>${money}</Number>
     </Wrapper>
   );
-}
+};
+
+export default ItemResume;

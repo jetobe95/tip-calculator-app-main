@@ -1,12 +1,14 @@
 import ItemResume from "./ItemResume/ItemResume";
-import { Button, Wrapper } from "./styledComponents";
+import { Button, Wrapper,ItemResumeContainer } from "./styledComponents";
 
 export default function TipResult() {
   return (
     <Wrapper>
-      <ItemResume/>
-      <ItemResume/>
-      <Button>Reset</Button>
+      <ItemResumeContainer>
+        <ItemResume money={'4.27'}/>
+        <ItemResume money={'32.79'}/>
+      </ItemResumeContainer>
+      <Button>RESET</Button>
     </Wrapper>
   );
 }
