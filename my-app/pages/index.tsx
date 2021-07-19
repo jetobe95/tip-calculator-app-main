@@ -1,12 +1,17 @@
 import Head from "next/head";
 import Image from "next/image";
 import styles from "../styles/Home.module.css";
-import ButtonSelectable from "../components/ButtonSelectable/ButtonSelectable";
 import GroupSelectabledButton from "../components/ButtonSelectable/GroupSelectabledButton";
 import Labelnput from "../components/Label/Label";
 import LabelTextInput from "../components/LabelTextInput/LabelTextInput";
 import TipResult from "../components/TipResult/TipResult";
-import { Wrapper,SizedBox,Nav } from "../components/styledComponents";
+import {
+  Wrapper,
+  SizedBox,
+  Nav,
+  LeftSide,
+  RightSide,
+} from "../components/styledComponents";
 
 export default function Home() {
   return (
@@ -18,18 +23,24 @@ export default function Home() {
       </Head>
 
       <header>
-        <Nav> <Image src='/logo.svg' height={53} width={86} alt='Logo'/> </Nav>
+        <Nav>
+          <Image src="/logo.svg" height={53} width={86} alt="Logo" />
+        </Nav>
       </header>
 
       <Wrapper>
-        <LabelTextInput label='Bill' placeholder='0' />
-        <SizedBox/>
-        <Labelnput title='Select Tip %'/>
-        <GroupSelectabledButton/> 
-        <SizedBox/>
+        <LeftSide>
+          <LabelTextInput label="Bill" placeholder="0" iconName='/icon-dollar.svg'  />
+          <SizedBox />
+          <Labelnput title="Select Tip %" />
+          <GroupSelectabledButton />
+          <SizedBox />
 
-        <LabelTextInput label='Number of people' placeholder='0' />
-        <TipResult/>
+          <LabelTextInput label="Number of people" placeholder="0" iconName='/icon-person.svg'  />
+        </LeftSide>
+        <RightSide>
+          <TipResult />
+        </RightSide>
       </Wrapper>
     </div>
   );

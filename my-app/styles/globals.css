@@ -7,6 +7,10 @@ body {
   background-color: #C5E4E7;
 }
 
+input {
+  caret-color:#26C2AE;
+}
+
 a {
   color: inherit;
   text-decoration: none;

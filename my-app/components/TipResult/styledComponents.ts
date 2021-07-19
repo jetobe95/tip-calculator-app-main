@@ -1,16 +1,22 @@
 import styled from "styled-components";
+import { mediaQueries } from "../breakpoint";
 
 export const Wrapper = styled.article`
   background-color: #00474b;
   border-radius: 15px;
   display: flex;
   flex-direction: column;
-  padding:2.125rem 1.5rem;
+  padding: 2.125rem 1.5rem;
+
+  ${mediaQueries("md")`
+  justify-content:space-between;
+  `};
+  
 `;
 
 export const ItemResumeContainer = styled.div`
-    padding-bottom:1rem;
-`
+  padding-bottom: 1rem;
+`;
 
 export const Button = styled.button`
   background-color: #26c2ae;
@@ -25,12 +31,14 @@ export const Button = styled.button`
   font-family: inherit;
   font-weight: 700;
 
-  &:hover{
-      background-color: #9FE8DF;
-      cursor: pointer;
+  &:hover {
+    background-color: #9fe8df;
+    cursor: pointer;
   }
-  &:disabled{
-    background-color: #0D686D;
-    opacity: .35;;
+  &:disabled {
+    background-color: #0d686d;
+    opacity: 0.35;
   }
+
+  
 `;

@@ -8,20 +8,26 @@ interface LabelTextInputProps {
   placeholder?: string;
   invalid?: boolean;
   errorMessage?: string;
+  iconName?: string;
 }
 const LabelTextInput: FC<LabelTextInputProps> = ({
   label,
   placeholder,
   invalid,
-  errorMessage
+  errorMessage,
+  iconName,
 }) => {
   return (
     <LabelTextInputContainer>
       <LabelContainer>
         <Label title={label} />
-        {invalid && <ErrorMessage message={errorMessage}/>}
+        {invalid && <ErrorMessage message={errorMessage} />}
       </LabelContainer>
-      <TextInput placeholder={placeholder} invalid={invalid} />
+      <TextInput
+        placeholder={placeholder}
+        invalid={invalid}
+        iconName={iconName??''}
+      />
     </LabelTextInputContainer>
   );
 };

@@ -4,7 +4,7 @@ interface IconProps{
     name:string
 }
 const Icon:FC<IconProps> = ({ name }) => {
-  return  <Image src={name} alt={name} height={16} width={16}/>
+  return  <Image src={name} alt={name} height={16} width={13}/>
 };
 
 export default Icon;

@@ -1,3 +1,4 @@
+import { mediaQueries } from './../breakpoint';
 import styled from "styled-components";
 
 export const Container = styled.div<{ enabled?: boolean }>`
@@ -15,6 +16,11 @@ export const Container = styled.div<{ enabled?: boolean }>`
   &:active {
     transform: scale(0.96);
   }
+
+  ${mediaQueries("md")`
+    grid-template-columns: repeat(3, 1fr);
+    width: 117px;
+  `};
 `;
 
 export const InputCustomTip = styled(Container)`
@@ -32,10 +38,20 @@ export const InputCustomTip = styled(Container)`
   &:active {
     transform: none;
   }
+  border:2px solid transparent;
+  &:hover{
+    border:2px solid #26C2AE;
+  }
+  
+;
 `;
 
 export const GridGroup = styled.article`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 1rem;
+  
+  ${mediaQueries("md")`
+  grid-template-columns: repeat(3, 1fr);
+  `};
 `;

@@ -7,6 +7,5 @@ export const LabelTextInputContainer = styled.div`
 
 export const LabelContainer= styled.div`
 display: flex;
-margin-bottom: 6px;
 justify-content: space-between;
 `
