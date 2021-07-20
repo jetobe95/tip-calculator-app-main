@@ -3,11 +3,12 @@ import { Container } from "./styledComponents";
 
 interface  ButtonSelectableProps {
     enabled?:boolean,
-    title:string
+    title:string;
+    onClick():void
 }
 
-const   ButtonSelectable:FC<ButtonSelectableProps> =({enabled,title})=> {
-  return <Container enabled={enabled}>{title}</Container>;
+const   ButtonSelectable:FC<ButtonSelectableProps> =({enabled,title,onClick})=> {
+  return <Container  onClick={onClick} enabled={enabled}>{title}</Container>;
 }
 
 export default ButtonSelectable

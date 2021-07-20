@@ -16,6 +16,9 @@ export const Container = styled.div<{ enabled?: boolean }>`
   &:active {
     transform: scale(0.96);
   }
+  &:hover{
+    background-color:#9FE8DF;
+  }
 
   ${mediaQueries("md")`
     grid-template-columns: repeat(3, 1fr);
@@ -41,6 +44,7 @@ export const InputCustomTip = styled(Container)`
   border:2px solid transparent;
   &:hover{
     border:2px solid #26C2AE;
+    background-color: transparent;
   }
   
 ;

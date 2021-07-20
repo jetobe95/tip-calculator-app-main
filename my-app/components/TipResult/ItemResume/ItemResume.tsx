@@ -8,12 +8,13 @@ import {
 } from "./styledComponents";
 interface ItemResumeProps {
   money?:string
+  title?:string
 }
-const ItemResume: FC<ItemResumeProps> = ({money}) => {
+const ItemResume: FC<ItemResumeProps> = ({money,title}) => {
   return (
     <Wrapper>
       <ContainerLeading>
-        <Title>Tip amount</Title>
+        <Title>{title}</Title>
         <Subtitle>/ person</Subtitle>
       </ContainerLeading>
       <Number>${money}</Number>

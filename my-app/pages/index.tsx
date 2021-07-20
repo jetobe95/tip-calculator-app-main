@@ -12,8 +12,10 @@ import {
   LeftSide,
   RightSide,
 } from "../components/styledComponents";
+import useAppState from "../hooks/useAppState";
 
 export default function Home() {
+  const { dispatch,state:{bill,numberOfPeople} } = useAppState();
   return (
     <div className={styles.container}>
       <Head>
@@ -30,13 +32,40 @@ export default function Home() {
 
       <Wrapper>
         <LeftSide>
-          <LabelTextInput label="Bill" placeholder="0" iconName='/icon-dollar.svg'  />
+          <LabelTextInput
+            label="Bill"
+            textInputProps={{
+              type:'number',
+              value:bill,
+              placeholder: "0",
+              iconName: "/icon-dollar.svg",
+              onChange: (text) =>
+                dispatch({
+                  type: "SET_BILL",
+                  payload: { bill: parseFloat(text) },
+                }),
+            }}
+          />
           <SizedBox />
           <Labelnput title="Select Tip %" />
           <GroupSelectabledButton />
           <SizedBox />
 
-          <LabelTextInput label="Number of people" placeholder="0" iconName='/icon-person.svg'  />
+          <LabelTextInput
+            label="Number of people"
+            textInputProps={{
+              type:'number',
+              placeholder:"0",
+              value:numberOfPeople,
+              iconName:"/icon-person.svg",
+              onChange: (text) =>
+                dispatch({
+                  type: "SET_NUMBER_OF_PEOPLE",
+                  payload: { numberOfPeople: parseFloat(text) },
+                }),
+
+            }}
+          />
         </LeftSide>
         <RightSide>
           <TipResult />

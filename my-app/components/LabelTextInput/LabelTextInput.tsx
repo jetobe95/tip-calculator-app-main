@@ -1,7 +1,7 @@
 import { FC } from "react";
 import ErrorMessage from "../ErrorMessages/ErrorMessage";
 import Label from "../Label/Label";
-import TextInput from "../TextInput/TextInput";
+import TextInput, { TextInputProps } from "../TextInput/TextInput";
 import { LabelTextInputContainer, LabelContainer } from "./styledComponents";
 interface LabelTextInputProps {
   label: string;
@@ -9,13 +9,13 @@ interface LabelTextInputProps {
   invalid?: boolean;
   errorMessage?: string;
   iconName?: string;
+  textInputProps?: TextInputProps;
 }
 const LabelTextInput: FC<LabelTextInputProps> = ({
   label,
-  placeholder,
   invalid,
   errorMessage,
-  iconName,
+  textInputProps,
 }) => {
   return (
     <LabelTextInputContainer>
@@ -24,9 +24,7 @@ const LabelTextInput: FC<LabelTextInputProps> = ({
         {invalid && <ErrorMessage message={errorMessage} />}
       </LabelContainer>
       <TextInput
-        placeholder={placeholder}
-        invalid={invalid}
-        iconName={iconName??''}
+        {...textInputProps}
       />
     </LabelTextInputContainer>
   );
